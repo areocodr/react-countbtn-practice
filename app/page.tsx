@@ -1,16 +1,8 @@
 "use client";
-import Image from "next/image";
+import Button from "@/components/button";
 import { useState } from "react";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center p-24 gap-4">
-      <h1>React counter button practice</h1>
-      <Button />
-    </main>
-  );
-}
-function Button() {
   const [count, setCount] = useState(0);
 
   function handleClick() {
@@ -18,11 +10,10 @@ function Button() {
   }
 
   return (
-    <button
-      onClick={handleClick}
-      className="bg-blue-500 hover:bg-blue-700 rounded text-white font-bold px-4 py-2"
-    >
-      I have been clicked {count} times
-    </button>
+    <main className="flex min-h-screen flex-col items-center p-24 gap-4">
+      <h1>React counter button practice</h1>
+      <Button count={count} onClick={handleClick} />
+      <Button count={count} onClick={handleClick} />
+    </main>
   );
 }
